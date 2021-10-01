@@ -14,16 +14,33 @@ Required Features
 
 ### Installation
 ```bash
-	git clone https://github.com/Shaileshsainee123/renal.git
-	cd renal
-	npm install
-	composer install
-	cp .env.example .env
-	php artisan key:generate
-	touch database/database.sqlite
-	php artisan migrate
-	php artisan db:seed
-	php artisan serve
+git clone https://github.com/Shaileshsainee123/renal.git
+```
+```bash
+cd renal
+```
+```bash
+npm install
+```
+```bash
+composer install
+```
+```bash
+cp .env.example .env
+```
+```bash
+php artisan key:generate
+```
+#### Create a database and make sql connection in .env file
+
+```bash
+php artisan migrate
+```
+```bash
+php artisan db:seed
+```
+```bash
+php artisan serve
 ```
 ###### Admin Login
 	Email: admin@renal.test

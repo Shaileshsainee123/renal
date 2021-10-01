@@ -20,15 +20,14 @@ class DoctorController extends Controller
             ->get()->toArray();
         $dates = Arr::pluck($data, 'dates');
         $count = Arr::pluck($data, 'count');
-        $max = round(max($count) + 5, -1);
-        $min = round(min($count), -1);  
+        $max = round(collect($count)->max() + 5, -1);
+        $min = round(collect($count)->min(), -1);
         $chartdata = [
             'dates' => $dates,
             'count' => $count,
             'max' => $max,
             'min' => $min,
-            'step' => (($max - $min) / 8),
-
+            'step' => (($max - $min) / 10),
         ];
         return view('doctor.chart', compact('chartdata'));
     }
